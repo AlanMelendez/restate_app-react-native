@@ -1,50 +1,101 @@
-# Welcome to your Expo app 👋
+# 📱 ReState App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+ReState is a modern **React Native** application designed to provide users with a seamless experience for finding their ideal home. Built with **React Native CLI**, it offers a smooth and interactive UI.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
+- 🏡 **Modern Onboarding Screen**
+- 🔑 **Google Authentication**
+- 📱 **Responsive UI with NativeWind/Tailwind**
+- 🎨 **Beautiful UI & Dark Mode Support**
+- 🚀 **Optimized Performance**
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 📷 Screenshots
 
-   ```bash
-    npx expo start
-   ```
+| Onboarding | Login Page |
+|------------|-----------|
+| ![Onboarding Screen](./assets/screenshots/onboarding.png) | ![Login Screen](./assets/screenshots/login.png) |
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🛠 Installation
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+### 1️⃣ **Clone the Repository**
+```sh
+ git clone https://github.com/AlanMelendez/restate-app.git
+ cd restate-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2️⃣ **Install Dependencies**
+```sh
+npm install
+```
 
-## Learn more
+### 3️⃣ **Run on Android Device/Emulator**
+```sh
+npx react-native run-android
+```
+or if you using pnpm
 
-To learn more about developing your project with Expo, look at the following resources:
+```sh
+pnpm react-native run-android
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 4️⃣ **Run on iOS (Mac only)**
+```sh
+npx pod-install
+npx react-native run-ios
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🔧 Configuration
+### **Google Authentication Setup**
+To enable Google Login, configure your Firebase project and replace the necessary API keys in the app.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Go to **AppWrite** → Add a project.
+---
+
+## 🤖 Development
+### **Directory Structure**
+```
+restate-app/
+├── android/      # Android native code
+├── ios/          # iOS native code
+├── src/          # Main application code
+│   ├── assets/   # Images, icons, and other static files
+│   ├── components/  # Reusable UI components
+│   ├── screens/  # App screens
+│   ├── styles/   # Styling and theme configuration
+│   ├── utils/    # Helper functions
+│   └── App.js    # Root component
+├── package.json  # Dependencies
+└── README.md     # Project documentation
+```
+
+---
+
+## 📌 Contributing
+Contributions are welcome! If you’d like to contribute, please fork the repository and submit a pull request.
+
+```sh
+git checkout -b feature/new-feature
+```
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License**.
+
+---
+
+## 👨‍💻 Author
+**Alan Dev**  
+🚀 GitHub: [@your-username](https://github.com/your-username)  
+✉️ Email: your-email@example.com
+
