@@ -163,3 +163,8 @@ export const gallery = [
     image: images.japan,
   },
 ];
+import { Client, Account, ID } from 'react-native-appwrite';
+
+export const client = new Client()
+    .setProject('67c2bcc6000273b8c1ba')
+    .setPlatform('com.acm.restate');
