@@ -1,6 +1,9 @@
 import {Avatars, Client,Account, OAuthProvider} from 'react-native-appwrite'
 import * as Linking from 'expo-linking';
 import { openAuthSessionAsync } from 'expo-web-browser';
+
+
+
 export const config = {
     platform: 'com.acm.restate',
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
@@ -8,7 +11,11 @@ export const config = {
 }
 
 export const client = new Client();
-client.setEndpoint(config.endpoint).setProject(config.projectId).setPlatform(config.platform);
+if (config.endpoint && config.projectId && config.platform) {
+    client.setEndpoint(config.endpoint).setProject(config.projectId).setPlatform(config.platform);
+} else {
+    throw new Error('Appwrite configuration is missing');
+}
 
 export const avatar = new Avatars(client);
 export const account = new Account(client);
@@ -36,7 +43,7 @@ export async function login() {
             throw new Error('Failed to login');
         }
 
-        const session = await account.createSession(secret);
+        const session = await account.createSession(secret, 'password');
 
         if (!session) {
             throw new Error('Failed to create a session!');
@@ -60,7 +67,7 @@ export async function logout() {
     }
 }
 
-export async function getUser() {
+export async function getCurrentUser() {
     try {
         const user = await account.get();
 

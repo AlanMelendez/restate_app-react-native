@@ -4,9 +4,12 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { login } from "@/lib/appwrite";
+import { useGlobalContext } from "@/lib/global-provider";
 const icons = {
   google: require("@/assets/icons/google.png"),
 };
@@ -15,9 +18,20 @@ const images = {
 };
 
 const SignIn = () => {
-  const handleLogin = () => {
-    // Implement Google Login
+
+  const {refetch, loading, isLoggedIn} = useGlobalContext();
+
+
+  const handleLogin = async () => {
+    const response = await login();
+    if (response) {
+      // Alert.alert("Success", "You have successfully logged in");
+      refetch();
+    } else {
+      Alert.alert("Error", "Failed to login");
+    }
   };
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: "#fff"}}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
